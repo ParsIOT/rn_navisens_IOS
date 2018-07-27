@@ -18,8 +18,9 @@ import {
 
 
 motionDNAstring = ""
-
-
+//here is in set states so that it move center of map to a lat and long . onPress={()=>{this.motionManager.setLocationLatitudeLongitude(60.0000002,60.0000002)}}
+// location_localLocation_y:  (motionDna.location_globalLocation_latitude+motionDna.location_localLocation_x*100).toFixed(3),
+// location_localLocation_x: (motionDna.location_globalLocation_longitude+motionDna.location_localLocation_y*100).toFixed(3),
 
 
 
