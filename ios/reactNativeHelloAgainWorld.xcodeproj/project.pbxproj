@@ -36,6 +36,9 @@
 		2DCD954D1E0B4F2C00145EB5 /* reactNativeHelloAgainWorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* reactNativeHelloAgainWorldTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		7A1C18762108E12F007E9A81 /* leaflet in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C18752108E12F007E9A81 /* leaflet */; };
+		7A1C187A210905CE007E9A81 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C1879210905CD007E9A81 /* main.jsbundle */; };
+		7A1C187D21090618007E9A81 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1C187C21090617007E9A81 /* assets */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		E1EC74DF205AFAC3004F95F0 /* MotionDnaReactBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EC74A6205AFAC3004F95F0 /* MotionDnaReactBridge.m */; };
@@ -346,6 +349,9 @@
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6F8F77B53395ABA2E2CBE621 /* Pods-reactNativeHelloAgainWorld.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactNativeHelloAgainWorld.release.xcconfig"; path = "Pods/Target Support Files/Pods-reactNativeHelloAgainWorld/Pods-reactNativeHelloAgainWorld.release.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7A1C18752108E12F007E9A81 /* leaflet */ = {isa = PBXFileReference; lastKnownFileType = folder; name = leaflet; path = ../../static/leaflet; sourceTree = "<group>"; };
+		7A1C1879210905CD007E9A81 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = SOURCE_ROOT; };
+		7A1C187C21090617007E9A81 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		D4478B16D6BFBAE40196BE8F /* Pods_reactNativeHelloAgainWorld.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reactNativeHelloAgainWorld.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -494,6 +500,8 @@
 		13B07FAE1A68108700A75B9A /* reactNativeHelloAgainWorld */ = {
 			isa = PBXGroup;
 			children = (
+				7A1C187B210905FD007E9A81 /* resources */,
+				7A1C18742108E0C7007E9A81 /* external */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -557,6 +565,23 @@
 				3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7A1C18742108E0C7007E9A81 /* external */ = {
+			isa = PBXGroup;
+			children = (
+				7A1C1879210905CD007E9A81 /* main.jsbundle */,
+				7A1C18752108E12F007E9A81 /* leaflet */,
+			);
+			path = external;
+			sourceTree = "<group>";
+		};
+		7A1C187B210905FD007E9A81 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A1C187C21090617007E9A81 /* assets */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -697,6 +722,7 @@
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
+				7A1C18782108EAAB007E9A81 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -719,20 +745,20 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = Z633UZ59K8;
+						DevelopmentTeam = AR59XCH95D;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = Z633UZ59K8;
+						DevelopmentTeam = AR59XCH95D;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Z633UZ59K8;
+						DevelopmentTeam = AR59XCH95D;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = Z633UZ59K8;
+						DevelopmentTeam = AR59XCH95D;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
@@ -1083,7 +1109,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1C18762108E12F007E9A81 /* leaflet in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				7A1C187A210905CE007E9A81 /* main.jsbundle in Resources */,
+				7A1C187D21090618007E9A81 /* assets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				E1EC7515205AFEAA004F95F0 /* Info.plist in Resources */,
 			);
@@ -1128,7 +1157,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-reactNativeHelloAgainWorld/Pods-reactNativeHelloAgainWorld-frameworks.sh",
-				"${PODS_ROOT}/../../../ios-sdk/build/release-universal/MotionDnaSDK.framework",
+				"${PODS_ROOT}/MotionDnaSDK/MotionDnaSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1170,6 +1199,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7A1C18782108EAAB007E9A81 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" == \"Debug\" ]; then\nexport SKIP_BUNDLING=true\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1242,7 +1284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1264,7 +1306,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				INFOPLIST_FILE = reactNativeHelloAgainWorldTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1284,7 +1326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = reactNativeHelloAgainWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1293,7 +1335,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.navisens.native.xample.reactNativeHelloAgainWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = pars.motion;
 				PRODUCT_NAME = reactNativeHelloAgainWorld;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1305,7 +1347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = reactNativeHelloAgainWorld/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1314,7 +1356,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.navisens.native.xample.reactNativeHelloAgainWorld;
+				PRODUCT_BUNDLE_IDENTIFIER = pars.motion;
 				PRODUCT_NAME = reactNativeHelloAgainWorld;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1330,7 +1372,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "reactNativeHelloAgainWorld-tvOS/Info.plist";
@@ -1358,7 +1400,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "reactNativeHelloAgainWorld-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1383,7 +1425,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "reactNativeHelloAgainWorld-tvOSTests/Info.plist";
@@ -1410,7 +1452,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = Z633UZ59K8;
+				DEVELOPMENT_TEAM = AR59XCH95D;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "reactNativeHelloAgainWorld-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

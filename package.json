@@ -13,6 +13,8 @@
     "eslint": "^3.19.0",
     "react": "^16.3.1",
     "react-native": "^0.55.4",
+    "react-native-git-upgrade": "^0.2.7",
+    "react-native-sentry": "^0.38.2",
     "react-timestamp": "^4.4.0",
     "rn-snoopy": "^2.0.2",
     "vary": "^1.1.2"

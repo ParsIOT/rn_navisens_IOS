@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import com.facebook.react.ReactApplication;
+import io.sentry.RNSentryPackage;
+import io.sentry.RNSentryPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -24,6 +26,8 @@ static Context context;
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSentryPackage(),
+            new RNSentryPackage(),
           new NavisensReactPackage()
 
       );

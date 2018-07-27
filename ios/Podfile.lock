@@ -1,0 +1,33 @@
+PODS:
+  - Crashlytics (3.10.5):
+    - Fabric (~> 1.7.9)
+  - Fabric (1.7.9)
+  - MotionDnaSDK (1.5.1)
+
+DEPENDENCIES:
+  - Crashlytics
+  - Fabric
+  - MotionDnaSDK (from `https://github.com/navisens/iOS-SDK.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+
+EXTERNAL SOURCES:
+  MotionDnaSDK:
+    :git: https://github.com/navisens/iOS-SDK.git
+
+CHECKOUT OPTIONS:
+  MotionDnaSDK:
+    :commit: 60d83be1dd9248cf2bd5b03985fd398dc4286b58
+    :git: https://github.com/navisens/iOS-SDK.git
+
+SPEC CHECKSUMS:
+  Crashlytics: 7f2e38d302d9da96475b3d64d86fb29e31a542b7
+  Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
+  MotionDnaSDK: dded634b68ec44937146ab6fa7f5329ca595aa72
+
+PODFILE CHECKSUM: 8f20ba3dc1058e5bdcb40443fd5bded19bf23515
+
+COCOAPODS: 1.5.3

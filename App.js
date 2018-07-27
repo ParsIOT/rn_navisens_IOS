@@ -11,55 +11,33 @@ import {
   Text,
   TextInput,
   View,
-  PermissionsAndroid,
-  Dimensions
+  Dimensions,
+  Image,
+  Animated
 } from 'react-native';
+
 
 motionDNAstring = ""
 
 
-async function requestNavisensPermission() {
-  if(Platform.OS === 'android') {
-    try {
-        var granted = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-          {
-            'title': 'Fine Location Permission',
-            'message': 'This location API needs your location'
-          }
-        )
-        var granted1 = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
-          {
-            'title': 'Coarse Location Permission',
-            'message': 'This location API needs your location'
-          }
-        )
-        var granted2 = await PermissionsAndroid.request(
-          PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-          {
-            'title': 'Log File Storage Permission',
-            'message': 'This app needs external storage permissions' + 
-                      ' to record log files if you enable that feature'
-          }
-        )
-      } catch (err) {
-        console.warn(err)
-      }
-    }
-  } 
+
 
 
 type Props = {};
 
 export default class App extends Component<Props> {
     componentDidMount(){
+      this.op()
       // setInterval(function(){console.warn(this.state.location_localLocation_x)},2000)
     }
+
+    
+
     constructor() {
         super();
-        requestNavisensPermission();
         this.state = {
+          loading:true,
+          OPACITY:new Animated.Value(1),
             motionDNAstring: "test",
             locationStatus: "UNKNOWN",
             location_localLocation_x: "0",
@@ -82,7 +60,7 @@ export default class App extends Component<Props> {
         this.motionManager.setLocationNavisens();
           // this.motionManager.setLocationGPSOnly();
           // this.motionManager.setBinaryFileLoggingEnabled(true)
-          // this.motionManager.setLocalHeadingOffsetInDegrees(90)
+          this.motionManager.setLocalHeadingOffsetInDegrees(180)
 
           this.motionManager.setExternalPositioningState("HIGH_ACCURACY")
           this.motionManager.setPowerMode("PERFORMANCE");
@@ -102,8 +80,8 @@ export default class App extends Component<Props> {
         this.subscription = this.motionDnaEmitter.addListener(
             'MotionDnaEvent',
             (motionDna) => {
-              this.refs.webview.postMessage(((this.state.location_localLocation_x*100).toFixed(2)).toString()+","+((this.state.location_localLocation_y*100).toFixed(2)).toString()+","+(this.state.location_localHeading).toString())              
-              console.warn("yes")
+              this.refs.webview.postMessage(((this.state.location_localLocation_y*100).toFixed(2)).toString()+","+((this.state.location_localLocation_x*100).toFixed(2)).toString()+","+(this.Convert2zeroto360((this.state.location_localHeading*(-1)+180).toFixed(2))).toString())              
+              //console.warn("yes")
               // console.warn("" + motionDna.location_localLocation_x.toFixed(3)+ "," + motionDna.location_localLocation_y.toFixed(3))
                 // console.log("parameter: " + motionDna.location_localHeading);
                 this.setState({
@@ -137,25 +115,69 @@ export default class App extends Component<Props> {
         // this.motionManager.setMotionDnaCallback((err, parameter) => 
     }
 
+    Convert2zeroto360(h){
+      while (true) {
+          if (h < 0) {
+              h += 360;
+          } else if (h > 360) {
+              h -= 360;
+          } else {
+              return h;
+          }
+      }
+  }
+
   
   onMessage = (data) => {                                         //the function to recieve message from webview
       console.log(data.nativeEvent.data)
   }
+
+
+  op(){
+    setTimeout(()=>{
+      Animated.timing(
+        this.state.OPACITY,
+        {
+          toValue:0,
+          duration:500
+        }
+      ).start(()=>{this.setState({loading:false})})
+  
+    },2500)
+  }
+
+  f_loading(){
+    if(this.state.loading){
+      return(
+        <Animated.View style={{opacity:this.state.OPACITY,alignItems:'center', justifyContent:'center', position:'absolute', alignSelf:'center', backgroundColor:'white', width:Dimensions.get("window").width, height:Dimensions.get("window").height}}>
+          <Image source={require('./static/leaflet/ParsiotAnimatedLarge.gif')} style={{width:200,height:200}}/>
+        </Animated.View> 
+        )
+    }
+    else{
+      return
+    }
+  }
+  
     
   render() {
     return (
-      <View style={{marginTop: 0, width:Dimensions.get("window").width, height:Dimensions.get("window").height-30}}>
-      <Button onPress={()=>{this.refs.webview.postMessage(this.state.location_localLocation_x.toString()+",")}} title='click'/>
+      <View style={{alignItems:'center', justifyContent:'center', position:'absolute', alignSelf:'center'}}>
+      <View style={{marginTop: 20, width:Dimensions.get("window").width, height:Dimensions.get("window").height}}>
       <WebView
                 // url='./android/app/static/leaflet/map.html'
-                // source={{ uri: 'file:///android_asset/leaflet/map.html' }}
+                // source={{ uri: 'file:///external/leaflet/map.html' }}
                 // startInLoadingState={true}
-                source={require('./android/app/static/leaflet/map.html')}
+                source={require('./static/leaflet/map.html')}
                 ref="webview"
                 onMessage={this.onMessage}
                 // javaScriptEnabledAndroid={true}
+                scalesPageToFit={false}
             />
             </View>
+
+            {this.f_loading()}
+      </View>
       
       // <View style={styles.container}>
       //   <Text style={styles.welcome}>

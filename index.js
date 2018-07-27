@@ -5,7 +5,19 @@ import bars from 'rn-snoopy/stream/bars'
 import filter from 'rn-snoopy/stream/filter'
 import buffer from 'rn-snoopy/stream/buffer'
 import EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter';
-const emitter = new EventEmitter()
-const events = Snoopy.stream(emitter)
-filter({ type: Snoopy.TO_JS }, true)(events).subscribe()
+
+//const emitter = new EventEmitter()
+//const events = Snoopy.stream(emitter)
+//filter({ type: Snoopy.TO_JS }, true)(events).subscribe()
 AppRegistry.registerComponent('reactNativeHelloAgainWorld', () => App);
+{/* <key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict> */}
